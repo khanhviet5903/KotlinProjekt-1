@@ -3,11 +3,11 @@ package shopping.list.data
 import androidx.room.PrimaryKey
 
 data class ShoppingListItem.kt(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val id:String,
     val name: String,
-    val timestamp: Long,
-    val isChecked: Boolean
+    val timestamp: LocalDateTime.parse(timestamp) 
+    val isChecked: Boolean = false 
 )
 
 
