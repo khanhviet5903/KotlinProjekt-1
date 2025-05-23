@@ -203,6 +203,7 @@ fun ShoppingListItemRow(
             Checkbox(
                 checked = item.isChecked,
                 onCheckedChange = { onItemClick() }
+                modifier = Modifier.padding(end = 16.dp)
             )
 
             Spacer(modifier = Modifier.width(12.dp))
@@ -212,14 +213,14 @@ fun ShoppingListItemRow(
                 modifier = Modifier.weight(1f),
                 fontSize = 16.sp,
                 textDecoration = if (item.isChecked) TextDecoration.LineThrough else TextDecoration.None,
-                color = if (item.isChecked) Color.Gray else Color.Black
+                color = if (item.isChecked) Color.Gray else MaterialTheme.colors.onSurface
             )
 
             IconButton(onClick = onDeleteClick) {
                 Icon(
                     Icons.Default.Delete,
                     contentDescription = "Delete",
-                    tint = Color.Red
+                    tint = Color.Pink
                 )
             }
         }
