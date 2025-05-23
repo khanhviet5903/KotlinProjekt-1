@@ -8,7 +8,7 @@ class ShoppingListViewModel(private val repository:`ShoppingListRepository.kt`):
     val allItems: Flow<List<ShoppingListItem>> = repository.getAllItems()
     fun addItem (name:String) {
         viewModelScope.launch {
-            repository.insertItem(name)
+            repository.updateItem(item.copy(isChecked = !item.isChecked))
         }
     }
     fun toggleItemState(item:ShoppingListItem) {
